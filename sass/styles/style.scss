@@ -1,0 +1,49 @@
+@import "./variables";
+
+@mixin buttonStyle($btnCol, $btnBgCol) {
+    background-color: $btnBgCol;
+    border-radius: 40px;
+    border: none;
+    width: 200px;
+    color: $btnCol;
+    padding: 10px;
+    &:hover{
+        background-color: $btnCol;
+        color: $btnBgCol;
+        transition-duration: 1.5s;
+        font-weight: bolder;
+        font-size: 18px;
+        border: 1px solid black;
+    }
+}
+
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.center {
+    background: $backgroundColor;
+    @include flexCenter();
+    button {
+        @include buttonStyle($backgroundColor, black);   
+    }
+}
+
+.anotherCenter{
+    background: black;
+    @include flexCenter();
+    button {
+        @include buttonStyle(black, $backgroundColor);
+    }
+    
+}
