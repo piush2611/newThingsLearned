@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@mixin iconStyle($h) {
+    background-position: $h 0;
+    &:hover{
+        background-position: $h -80px;
+    }
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 400px;
+    div{
+        background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcReyYPHQ54q2Kf7mlYvA4_CzVMRe8HPbCHPS1wh-4513LlGmim0&usqp=CAU") no-repeat ;
+        display: inline-block;
+        width: 80px;
+        height: 80px;
+    }
+    .women{
+        @include iconStyle(0)
+    }
+
+    .men1{
+        @include iconStyle(-80px)
+    }
+
+    .ninja{
+        @include iconStyle(-160px)
+    }
+
+    .men2{
+        @include iconStyle(-240px)
+    }
+
+}
